@@ -15,7 +15,7 @@ CThread::~CThread()
 
 //------------------------------------------------------------------------
 /**
-@brief 쓰레드 생성
+@brief Thread Create
 *///----------------------------------------------------------------------
 bool CThread::CreateThread(bool bEvent/* = false*/)
 {
@@ -24,7 +24,7 @@ bool CThread::CreateThread(bool bEvent/* = false*/)
 	if (m_hThread == NULL)
 		return false;
 
-	// 종료 이벤트 사용
+	// Exit Event Use
 	if (m_bEvent)
 	{
 		m_hQuitEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
@@ -39,7 +39,7 @@ bool CThread::CreateThread(bool bEvent/* = false*/)
 
 //------------------------------------------------------------------------
 /**
-@brief 쓰레드 종료
+@brief Thread End
 *///----------------------------------------------------------------------
 void CThread::DestroyThread(unsigned int uMilliseconds/* = INFINITE*/)
 {
